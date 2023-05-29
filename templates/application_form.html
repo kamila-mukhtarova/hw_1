@@ -1,0 +1,75 @@
+<style>
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+
+  .form-container h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-container label {
+    font-weight: bold;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .form-container input[type="submit"] {
+    cursor: pointer;
+  }
+
+  .form-container input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+<div class="form-container">
+  <h4>Application Form</h4>
+  <form action="/job/{{job['id']}}/apply" method="post">
+    <div class="mb-2">
+      <label>Full Name</label><br>
+      <input type="text" class="input-group-text" required name="full_name" placeholder="Kami Mukhtarova">
+    </div>
+
+    <div class="mb-2">
+      <label>Email</label><br>
+      <input type="email" class="input-group-text" required name="email" placeholder="kami@kamushek.com">
+    </div>
+
+    <div class="mb-2">
+      <label>LinkedIn URL</label><br>
+      <input type="url" name="linkedin_url" class="form-control" placeholder="https://linked.com/in/kami">
+    </div>
+
+    <div class="mb-2">
+      <label>Education</label><br>
+      <textarea class="form-control" name="education"></textarea>
+    </div>
+
+    <div class="mb-2">
+      <label>Work Experience</label><br>
+      <textarea class="form-control" name="work_experience"></textarea>
+    </div>
+
+    <div class="mb-2">
+      <label>Resume URL</label><br>
+      <input type="url" name="resume_url" class="form-control">
+    </div>
+
+    <input type="submit" class="btn btn-outline-dark">
+  </form>
+</div>
